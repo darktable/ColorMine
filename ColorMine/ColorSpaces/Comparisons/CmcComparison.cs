@@ -58,7 +58,7 @@ namespace ColorMine.ColorSpaces.Comparisons
 
             var c1_4 = c1 * c1;
             c1_4 *= c1_4;
-            var t = 164 <= h || h >= 345
+            var t = 164 <= h && h <= 345
                         ? .56 + Math.Abs(.2 * Math.Cos(h + 168.0))
                         : .36 + Math.Abs(.4 * Math.Cos(h + 35.0));
             var f = Math.Sqrt(c1_4 / (c1_4 + 1900.0));
