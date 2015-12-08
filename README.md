@@ -1,3 +1,40 @@
+# ColorMineAddMunsell
+
+Add Munsell and  Hex
+
+use munsell data http://www.rit.edu/cos/colorscience/rc_munsell_renotation.php real.dat
+
+
+## Add Color Spaces
+
+* Munsell (approximate)
+* Hex
+
+## Munsell Conversion
+
+```c#
+var munsell = new Munsell("5R 4/10");	//Chromatic color
+var rgb = munsell.To<Rgb>();
+var str = munsell.ToString(); // return "5R 4/10"
+var retmunsell = rgb.To<Munsell>();	// approximate.  Not Equal "5R 4/10".
+
+var munsell2 = new Munsell("N7.5"); //Achromatic color
+var rgb2 = munsell2.To<Rgb>();
+```
+
+## Hex Conversion
+
+```c#
+var hex  = new Hex("#FFFFFF");	
+var hex2 = new Hex("FFFFFF");	//  # none OK
+var hex3 = new Hex("FFF");		// Triplet OK
+
+var rgb = hex.To<Rgb>();
+var code = hex.Code;	// return "#FFFFFF"
+var rethex = rgb.To<Hex>();	// "#FFFFFF"
+```
+
+
 # ColorMine
 
 MIT Licensed .Net library that makes converting between color spaces and comparing colors easy.
@@ -15,18 +52,18 @@ You can convert between any supported color spaces via generic methods like so:
 
 
 ```c#
-var myRgb = new Rgb(149, 13, 12)
+var myRgb = new Rgb { R = 149, G = 13, B = 12 }
 var myCmy = myRgb.To<Cmy>();
 ```
 
 
 ```c#
-var myXyz = new Xyz(myRgb);
+var myXyz = new Xyz { X = .44, Y = .7, Z = .99 }
 var myLab = myXyz.To<Lab>();
 ```
 
 ```c#
-var myYxy = new Yxy { Y1 = .1124, X = .22, Y2 = .14 };
+var myYxy = new Xyz { Y1 = .1124, X = .22, Y2 = .14 }
 var myHsl = myYxy.To<Hsl>();
 ```
 
@@ -92,3 +129,4 @@ Note: Delta-e calculations are [quasimetric](http://en.wikipedia.org/wiki/Quasim
 * CMC l:c
 * CIE94
 * CIE2000
+

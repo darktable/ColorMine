@@ -44,9 +44,6 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
@@ -63,9 +60,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Sets\AllCounterCounterTest.cs" />
-    <Compile Include="Sets\ColorCounterTest.cs" />
-    <Compile Include="Sets\KMeansClusteringCounterTest.cs" />
     <Compile Include="ColorSpaces\ColorSpaceTest.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,7 +96,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ColorSpaceTest.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
     <None Include="TestData\CieDe2000TestData.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
